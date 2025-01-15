@@ -15,6 +15,9 @@ export const DiffViewer: FC = () => {
   const [splitView, _setSplitView] = Retool.useStateBoolean({
     name: 'splitView'
   });
+  const [disableWordDiff, _setDisableWordDiff] = Retool.useStateBoolean({
+    name: 'disableWordDiff'
+  });
 
-  return <ReactDiffViewer oldValue={previousValue} newValue={newValue} splitView={splitView ?? true} />;
+  return <ReactDiffViewer disableWordDiff={disableWordDiff} oldValue={previousValue} newValue={newValue} splitView={splitView ?? true} />;
 }
